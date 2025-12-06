@@ -19,6 +19,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Load .env
 load_dotenv(BASE_DIR / ".env")
 
+STATIC_URL = "/static/"
+
+# Folder in your repo where static files live
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    BASE_DIR / "frontend" / "static",
+]
+
+# Folder where collectstatic will put production files
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# WhiteNoise storage
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 AMPLITUDE_API_KEY = os.getenv("AMPLITUDE_API_KEY", "")
 AMPLITUDE_SECRET_KEY = os.getenv("AMPLITUDE_SECRET_KEY", "")
 AMPLITUDE_REGION = os.getenv("AMPLITUDE_REGION", "US")
@@ -140,18 +154,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'frontend' / 'media'
 
-from pathlib import Path
-import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = "/static/"
-
-# Where your source static files live (your existing `static/` folder)
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-
-# Where collectstatic will put final files for production
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
