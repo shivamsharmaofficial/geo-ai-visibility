@@ -36,7 +36,12 @@ SECRET_KEY = 'django-insecure--%7a-ayiy@#!5qj#sz89%h0ls-ta!4xbt9e$y3r%c9&cs2wlsm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "geo-ai-visibility.onrender.com",
+]
+
 
 
 # Application definition
