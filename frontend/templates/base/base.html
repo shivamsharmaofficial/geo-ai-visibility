@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}AI Visibility{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Forzeo <span>GEO</span></div>
+        </div>
+
+        <nav class="nav">
+            <div class="nav-section-label">Analytics</div>
+
+            <a href="{% url 'ai_dashboard' %}"
+               class="nav-item {% if active_page == 'ai_visibility' %}active{% endif %}">
+                <span class="nav-icon">📈</span>
+                <span class="nav-label">AI Visibility</span>
+            </a>
+
+            <a href="{% url 'competitor' %}"
+               class="nav-item {% if active_page == 'competitor' %}active{% endif %}">
+                <span class="nav-icon">🤝</span>
+                <span class="nav-label">Competitor</span>
+            </a>
+
+            <a href="{% url 'sources' %}"
+               class="nav-item {% if active_page == 'sources' %}active{% endif %}">
+                <span class="nav-icon">🔗</span>
+                <span class="nav-label">Source</span>
+            </a>
+
+            <a href="{% url 'prompts' %}"
+               class="nav-item {% if active_page == 'prompts' %}active{% endif %}">
+                <span class="nav-icon">💬</span>
+                <span class="nav-label">Prompts</span>
+            </a>
+
+            <a href="{% url 'gam_analysis' %}"
+               class="nav-item {% if active_page == 'gam_analysis' %}active{% endif %}">
+                <span class="nav-icon">🎮</span>
+                <span class="nav-label">Gam Analysis</span>
+            </a>
+
+            <a href="{% url 'llm_traffic' %}"
+               class="nav-item {% if active_page == 'llm_traffic' %}active{% endif %}">
+                <span class="nav-icon">🧠</span>
+                <span class="nav-label">LLM Traffic</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">{% block page_title %}AI Visibility{% endblock %}</h1>
+                <p class="page-subtitle">
+                    {% block page_subtitle %}
+                    Monitor how often your brand is surfaced by AI models and where it ranks
+                    against competitors across prompts, sources and models.
+                    {% endblock %}
+                </p>
+            </div>
+
+            <div class="topbar-right">
+                <div class="date-range-pill">
+                    <span class="date-range-icon">📅</span>
+                    <span class="date-range-label">Nov 5, 2025 – Dec 3, 2025</span>
+                </div>
+                <button class="btn-ghost topbar-btn">Feedback</button>
+                <div class="brand-select-pill">
+                    <span class="brand-badge"></span>
+                    <span class="brand-label">boAt</span>
+                    <span class="chevron">▾</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="page-content">
+            {% block content %}{% endblock %}
+        </section>
+    </main>
+</div>
+
+<!-- Chart.js for line + donut charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

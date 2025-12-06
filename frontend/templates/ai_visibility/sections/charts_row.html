@@ -1,0 +1,44 @@
+<div class="layout-two-col">
+    <!-- Left panel: Visibility / Rank trends -->
+    <section class="panel">
+        <div class="panel-header">
+            <div>
+                <h2 class="panel-title">Visibility Trends (SOV)</h2>
+                <p class="panel-subtitle" id="trendSubtitle">
+                    Track your share of voice and average rank vs competitors over time.
+                </p>
+            </div>
+            <div class="panel-filters">
+                <button type="button" class="tab active" id="trendTabVisibility">
+                    Visibility (SOV)
+                </button>
+                <button type="button" class="tab" id="trendTabRank">
+                    Average Rank
+                </button>
+                <select class="panel-select" id="trendTopicSelect">
+                    <option value="">All Topics</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="height: 200px;">
+            <canvas id="visibilityTrendChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Right panel: Brand vs competitors donut -->
+    <section class="panel">
+        <div class="panel-header">
+            <div>
+                <h2 class="panel-title">Mentions by Brand vs Competitors</h2>
+                <p class="panel-subtitle" id="donutSubtitle">
+                    Share of AI responses that mention each brand.
+                </p>
+            </div>
+        </div>
+
+        <div style="height: 220px;">
+            <canvas id="mentionsDonutChart"></canvas>
+        </div>
+    </section>
+</div>

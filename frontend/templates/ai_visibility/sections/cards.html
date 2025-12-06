@@ -1,0 +1,49 @@
+<div class="cards-row">
+    <!-- Mentions -->
+    <article class="card">
+        <div class="card-header-line">
+            <div class="card-label">
+                <span id="cardBrandMentionsLabel">{{ brand_name }}</span> Mentions
+            </div>
+        </div>
+        <div class="card-value">
+            <span id="cardMentionsValue">{{ brand_visibility }}</span>%
+        </div>
+        <div class="card-subtitle">
+            Percentage of AI responses that mention
+            <span id="cardBrandMentionsSubtitle">{{ brand_name }}</span>
+            across selected topics.
+        </div>
+    </article>
+
+    <!-- Average Rank -->
+    <article class="card">
+        <div class="card-header-line">
+            <div class="card-label">
+                <span id="cardBrandAvgRankLabel">{{ brand_name }}</span> Average Rank
+            </div>
+        </div>
+        <div class="card-value">
+            #<span id="cardAvgRankValue">{{ avg_rank }}</span>
+        </div>
+        <div class="card-subtitle">
+            Average ranking position when
+            <span id="cardBrandAvgRankSubtitle">{{ brand_name }}</span>
+            appears in AI results.
+        </div>
+    </article>
+
+    <!-- Citations -->
+    <article class="card">
+        <div class="card-header-line">
+            <div class="card-label">Citations</div>
+        </div>
+        <div class="card-value">
+            <span id="cardCitationsValue">{{ citations }}</span>
+        </div>
+        <div class="card-subtitle">
+            Number of AI responses that explicitly reference
+            <span id="cardBrandCitationsSubtitle">{{ brand_name }}</span>.
+        </div>
+    </article>
+</div>

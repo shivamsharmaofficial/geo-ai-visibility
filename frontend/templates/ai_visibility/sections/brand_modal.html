@@ -1,0 +1,142 @@
+<div class="modal-backdrop" id="brandModalBackdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="brandModalTitle">Add New Brand</h2>
+            <button type="button" class="modal-close" id="closeBrandModal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+            <div id="brandModalError" class="modal-error" style="display: none;"></div>
+
+            <form class="modal-form" onsubmit="return false;">
+                {# ---------- STEP 1 ---------- #}
+                <div id="brandStep1" class="modal-step is-active">
+                    <div class="modal-grid">
+                        <div>
+                            <label class="field-label" for="brandNameStep1">Brand Name</label>
+                            <input
+                                id="brandNameStep1"
+                                type="text"
+                                class="field-input"
+                                placeholder="boAt, pTron, Sony, etc." />
+                            <div class="field-help">
+                                Start typing a brand you want to track in AI visibility.
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="brandDescStep1">Brand Description (optional)</label>
+                            <textarea
+                                id="brandDescStep1"
+                                class="field-textarea"
+                                rows="3"
+                                placeholder="Briefly describe the brand, product lines, market segment, etc."></textarea>
+                            <div class="field-help">
+                                Helps the AI choose the right website and topics.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" id="cancelBrandModal">
+                            Cancel
+                        </button>
+                        <button type="button" class="btn-primary" id="brandStepNext">
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                {# ---------- STEP 2 ---------- #}
+                <div id="brandStep2" class="modal-step">
+                    <div class="modal-grid">
+                        <div>
+                            <label class="field-label" for="brandNameStep2">Brand Name</label>
+                            <input
+                                id="brandNameStep2"
+                                type="text"
+                                class="field-input"
+                                placeholder="boAt" />
+                            <div class="field-help">
+                                You can refine the official brand name if needed.
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="brandDescStep2">Brand Description</label>
+                            <textarea
+                                id="brandDescStep2"
+                                class="field-textarea"
+                                rows="3"
+                                placeholder="Short description of this brand."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-grid">
+                        <div>
+                            <label class="field-label" for="brandUrlStep2">Official Website</label>
+                            <input
+                                id="brandUrlStep2"
+                                type="text"
+                                class="field-input"
+                                placeholder="https://www.example.com" />
+                            <div class="field-help">
+                                Used to track citations where AI models reference your website explicitly.
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="brandRegionStep2">Region</label>
+                            <input
+                                id="brandRegionStep2"
+                                type="text"
+                                class="field-input"
+                                placeholder="India, Global, etc." />
+                            <div class="field-help">
+                                Primary geography where the brand is active.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-grid">
+                        <div>
+                            <label class="field-label" for="brandLangStep2">Language</label>
+                            <input
+                                id="brandLangStep2"
+                                type="text"
+                                class="field-input"
+                                placeholder="English, Hindi, etc." />
+                            <div class="field-help">
+                                Main language of your website & brand presence.
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="brandTopicsStep2">Initial Topics</label>
+                            <textarea
+                                id="brandTopicsStep2"
+                                class="field-textarea"
+                                rows="3"
+                                placeholder="One topic per line, e.g.&#10;True wireless earbuds&#10;Bluetooth speakers&#10;Gaming headsets"></textarea>
+                            <div class="field-help">
+                                These are the product or topic clusters you want to track.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" id="cancelBrandModalStep2">
+                            Cancel
+                        </button>
+                        <button type="button" class="btn-secondary" id="brandRegenerate">
+                            Regenerate
+                        </button>
+                        <button type="button" class="btn-primary" id="brandCreateBtn">
+                            Create
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

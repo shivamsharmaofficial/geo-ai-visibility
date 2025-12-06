@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}AI Visibility – {{ brand_name }}{% endblock %}
+{% block page_title %}AI Visibility{% endblock %}
+
+{% block content %}
+    {# Brand search bar + +Add Brand button #}
+    {% include "ai_visibility/sections/brand_bar.html" %}
+
+    {# 🔹 Loading bar just under brand bar #}
+    {% include "ai_visibility/sections/analysis_status.html" %}
+
+    {% if error_message %}
+        <div class="alert alert-warning">{{ error_message }}</div>
+    {% endif %}
+
+    {# Top metric cards #}
+    {% include "ai_visibility/sections/cards.html" %}
+
+    {# Charts (trend + donut + top prompts etc.) #}
+    {% include "ai_visibility/sections/charts_row.html" %}
+
+    {# Add Brand modal #}
+    {% include "ai_visibility/sections/brand_modal.html" %}
+{% endblock %}

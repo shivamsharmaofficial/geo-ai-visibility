@@ -1,0 +1,44 @@
+<div class="brand-bar">
+    <form class="brand-search-form" method="get" action="">
+        <div class="brand-field">
+            <label class="brand-field-label">Brand</label>
+            <div class="brand-field-input-shell">
+                <span class="brand-field-icon">🏷</span>
+                <input
+                    class="brand-input"
+                    type="text"
+                    name="brand"
+                    value="{{ brand_name }}"
+                    placeholder="Search or enter brand name (e.g. boAt, pTron, Sony)" />
+            </div>
+        </div>
+
+        <div class="brand-field inline">
+            <label class="brand-field-label">Topic</label>
+            <select class="brand-select">
+                <option>All Topics</option>
+                <option>True Wireless Stereo</option>
+                <option>Wearable Technology</option>
+                <option>Bluetooth Speakers</option>
+            </select>
+        </div>
+
+        <div class="brand-field inline">
+            <label class="brand-field-label">Models</label>
+            <select class="brand-select">
+                <option>All Models</option>
+                <option>GPT</option>
+                <option>Claude</option>
+                <option>Gemini</option>
+            </select>
+        </div>
+
+        <button class="btn-primary brand-run-btn" type="submit">
+            Run Analysis
+        </button>
+    </form>
+
+    <button class="btn-secondary" type="button" id="openBrandModal">
+        + Add Brand
+    </button>
+</div>
