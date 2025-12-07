@@ -78,30 +78,13 @@ body {
     color: #ffffff;
 }
 
-/* nav footer */
-.nav-footer {
-    font-size: 11px;
+.nav-icon {
+    margin-right: 6px;
+    font-size: 14px;
 }
 
-.nav-foot-caption {
-    color: #9ca3af;
-    margin-bottom: 4px;
-}
-
-.progress-shell {
-    width: 100%;
-    height: 6px;
-    border-radius: 999px;
-    background: #111827;
-    overflow: hidden;
-}
-.progress-fill {
-    height: 100%;
-    background: #3b82f6;
-}
-.nav-foot-meta {
-    margin-top: 4px;
-    color: #9ca3af;
+.nav-label {
+    white-space: nowrap;
 }
 
 /* main layout */
@@ -116,6 +99,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 14px;
+    gap: 10px;
 }
 
 .page-title {
@@ -382,6 +366,12 @@ body {
     margin: 0;
 }
 
+.panel-subtitle {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #6b7280;
+}
+
 .panel-filters {
     display: flex;
     gap: 6px;
@@ -628,26 +618,6 @@ body {
     gap: 8px;
 }
 
-/* --- responsive --- */
-@media (max-width: 980px) {
-    .sidebar {
-        display: none;
-    }
-    .main {
-        padding: 12px 12px 18px;
-    }
-    .layout-two-col {
-        grid-template-columns: minmax(0, 1fr);
-    }
-    .cards-row {
-        grid-template-columns: minmax(0, 1fr);
-    }
-    .brand-search-form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
-
 /* multi-step modal */
 .modal-step {
     display: none;
@@ -667,6 +637,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* --- analysis status bar --- */
 .analysis-status {
     display: flex;
     align-items: center;
@@ -736,8 +707,157 @@ body {
     color: #111827;
 }
 
-.panel-subtitle {
-    margin: 2px 0 0;
-    font-size: 12px;
-    color: #6b7280;
+/* --- RESPONSIVE --- */
+
+/* Tablet & small laptop: stack layout, keep sidebar as top bar */
+@media (max-width: 980px) {
+    .app-shell {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .sidebar-header {
+        margin-bottom: 0;
+    }
+
+    .nav {
+        flex: 1;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 0;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .nav-section-label {
+        display: none;
+    }
+
+    .nav-item {
+        font-size: 13px;
+        padding: 6px 8px;
+        white-space: nowrap;
+    }
+
+    .main {
+        padding: 12px 12px 18px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .topbar-right {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .date-range-pill,
+    .brand-select-pill,
+    .topbar-btn {
+        margin-top: 2px;
+    }
+
+    .brand-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .brand-search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .brand-field.inline {
+        max-width: none;
+    }
+
+    .brand-run-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .cards-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .layout-two-col {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .competitor-row {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+
+    .competitor-right {
+        text-align: left;
+    }
+
+    .analysis-status {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .analysis-status-right {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .analysis-progress-shell {
+        flex: 1;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .modal-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Small phones */
+@media (max-width: 640px) {
+    .page-title {
+        font-size: 20px;
+    }
+
+    .page-subtitle {
+        font-size: 12px;
+    }
+
+    .nav-label {
+        display: none;
+    }
+
+    .nav-icon {
+        margin-right: 0;
+    }
+
+    .brand-select-pill {
+        font-size: 12px;
+        padding-inline: 8px;
+    }
+
+    .date-range-label {
+        font-size: 12px;
+    }
+
+    .analysis-status {
+        border-radius: 12px;
+    }
 }
